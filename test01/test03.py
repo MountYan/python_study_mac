@@ -15,9 +15,7 @@ def common_element_count(nums_list: list):
         return 0
 
 
-def gerate_nums_list():
-    elements = string.digits + string.ascii_lowercase + string.ascii_uppercase
-    print(elements)
+def gerate_nums_list(elements):
     nums_list = []
     for _ in range(4):
         nums = random.choices(elements, k=4)
@@ -27,14 +25,15 @@ def gerate_nums_list():
 
 @time_this_function
 def main():
-    nums_list = gerate_nums_list()
+    elements = string.digits + string.ascii_letters
+    nums_list = gerate_nums_list(elements=elements)
     count, set_element = common_element_count(nums_list=nums_list)
     number = 1
     while 1:
         if count >= 1:
             break
         else:
-            nums_list = gerate_nums_list()
+            nums_list = gerate_nums_list(elements=elements)
             count, set_element = common_element_count(nums_list=nums_list)
             number += 1
 
