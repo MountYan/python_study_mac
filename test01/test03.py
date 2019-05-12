@@ -30,7 +30,7 @@ def main():
     count, set_element = common_element_count(nums_list=nums_list)
     number = 1
     while 1:
-        if count >= 1:
+        if count >= 2:
             break
         else:
             nums_list = gerate_nums_list(elements=elements)
